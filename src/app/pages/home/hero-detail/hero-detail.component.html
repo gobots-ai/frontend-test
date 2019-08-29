@@ -1,0 +1,26 @@
+<div *ngIf="hasComics">
+  <h1 mat-dialog-title>5 newest <strong>{{this.heroName}}</strong> comics!</h1>
+  <div mat-dialog-content>
+    <mat-list>
+      <mat-list-item *ngFor="let comic of newestComics">
+        <mat-icon mat-list-icon [matTooltip]="comic.description" matTooltipPosition="below">book</mat-icon>
+        <p mat-line>{{comic.title}}</p>
+        <small mat-line class="date">Date set on sale: {{comic.dates[0].date | date: 'longDate'}}</small>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+
+    </mat-list>
+  </div>
+  <div mat-dialog-actions>
+    <button class="back-button" mat-raised-button mat-dialog-close>Back</button>
+  </div>
+</div>
+
+<div *ngIf="!hasComics">
+  <div mat-dialog-content>
+    <h3 mat-dialog-title>{{this.heroName}} doesn't have any adventures yet!</h3>
+  </div>
+  <div mat-dialog-actions>
+    <button class="back-button" mat-raised-button mat-dialog-close>Back</button>
+  </div>
+</div>
