@@ -1,0 +1,17 @@
+.my-table {
+  
+  table {
+    width: 100%;
+  }
+
+  .my-header {
+    color: black;
+    text-transform: uppercase;
+    border-bottom: 3px solid black;
+  }
+
+  .mat-row:hover {
+    background-color: #E0E0E0;
+    cursor: pointer;
+  }
+}
